@@ -27,6 +27,7 @@
 
 			<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
+		
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -159,11 +160,12 @@
 										</article>
 									</div>
 								</section>
-								
-								<section id="experience">
-									<h2>Experiência Profissional</h2>
-
-									<!-- Período 1 -->
+								<!-- Section -->
+								<section id="experience"></section>
+								<header class="major">
+										<h2>Currículo</h2>
+								</header>
+									<h2 class="accordion">▶ Experiência Profissional</h2>
 									<div class="experience-item">
 										<h3>Especialista em Dados e Avaliação de Impacto @ {reprograma}</h3>
 										<p><strong>Data:</strong> Março de 2022 - Agora</p>
@@ -215,7 +217,7 @@
 								</section>	
 								
 								<section id="education">
-									<h2>Formação Acadêmica</h2>
+									<h2 class="accordion">▶ Formação Acadêmica</h2>
 									
 									<!-- Cargo 1 -->
 									<div class="experience-item">
@@ -238,7 +240,7 @@
 								</section>	
 
 								<section id="languages">
-									<h2>Línguas</h2>
+									<h2 class="accordion">▶ Línguas</h2>
 									
 									<!-- Cargo 1 -->
 									<div class="experience-item">
@@ -251,7 +253,7 @@
 								</section>	
 
 								<section id="courses">
-									<h2>Outros cursos</h2>
+									<h2 class="accordion">▶ Outros cursos</h2>
 									
 									<!-- Cursos -->
 									<div class="experience-item">
@@ -348,6 +350,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- Seu script de menu alternante -->
+			<script>
+				const acc = document.querySelectorAll(".accordion");
 
+				acc.forEach(item => {
+				item.addEventListener("click", () => {
+					// Alterna visual do botão (se quiser mudar símbolo ▶/▼)
+					item.textContent = item.textContent.startsWith("▼") ?
+					item.textContent.replace("▼", "▶") :
+					item.textContent.replace("▶", "▼");
+
+					// Alterna visibilidade do conteúdo
+					const panel = item.nextElementSibling;
+					panel.style.display = panel.style.display === "block" ? "none" : "block";
+				});
+				});
+			</script>
 	</body>
 </html>
